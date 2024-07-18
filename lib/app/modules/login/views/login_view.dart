@@ -13,11 +13,15 @@ class LoginView extends GetView<LoginController> {
         title: const Text('LoginView'),
         centerTitle: true,
       ),
-     body: Center(
+      body: Center(
         child: ElevatedButton(
-          child: const Text('LoginView is working'),
+          child: Text(
+            'LoginView is working',
+            style: Get.textTheme.bodyLarge,
+          ),
           onPressed: () {
-            print("@@"+controller.test({"data":"data"}).toString());
+            controller.setToken();
+            print("@@" + controller.test({"data": "data"}).toString());
           },
         ),
       ),

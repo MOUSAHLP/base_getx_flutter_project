@@ -1,3 +1,4 @@
+import 'package:bookanyvan_driver/core/middlewares/auth_middleware.dart';
 import 'package:get/get.dart';
 import '../modules/login/bindings/login_binding.dart';
 import '../modules/login/views/login_view.dart';
@@ -13,10 +14,10 @@ class AppPages {
 
   static final routes = [
     GetPage(
-      name: _Paths.HOME,
-      page: () => const HomeView(),
-      binding: HomeBinding(),
-    ),
+        name: _Paths.HOME,
+        page: () => const HomeView(),
+        binding: HomeBinding(),
+        middlewares: [AuthMiddleware()]),
     GetPage(
       name: _Paths.LOGIN,
       page: () => const LoginView(),

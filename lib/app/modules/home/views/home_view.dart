@@ -14,14 +14,31 @@ class HomeView extends GetView<HomeController> {
         title: const Text('HomeView'),
         centerTitle: true,
       ),
-      body: Center(
-        child: ElevatedButton(
-          child: const Text('HomeView is working'),
-          onPressed: () {
-            // Get.to(() => const LoginView());
-            Get.back();
-          },
-        ),
+      body: Column(
+        children: [
+          Center(
+            child: ElevatedButton(
+              child: Text(
+                'test',
+                style: Get.textTheme.bodySmall,
+              ),
+              onPressed: () {
+                controller.test();
+              },
+            ),
+          ),
+              Center(
+            child: ElevatedButton(
+              child: Text(
+                'remove token',
+                style: Get.textTheme.bodySmall,
+              ),
+              onPressed: () {
+                controller.removeToken();
+              },
+            ),
+          ),
+        ],
       ),
     );
   }

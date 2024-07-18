@@ -9,10 +9,9 @@ import 'interceptors_handler.dart';
 
 class BaseApiClient {
   static Dio client = Dio();
-  static const String _acceptHeader = 'application/json';
   static CancelToken getTargetCancelToken = CancelToken();
   static final Map<String, String> _headers = {
-    'Accept': _acceptHeader,
+    'Accept':'application/json',
     // 'version': DataStore.instance.getVersion ?? "",
     // 'authorization': 'Bearer ${DataStore.instance.token ?? ''}',
     // 'lang' : DataStore.instance.lang,

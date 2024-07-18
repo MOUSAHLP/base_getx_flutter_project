@@ -1,6 +1,9 @@
 import 'dart:convert';
 
+import 'package:bookanyvan_driver/app/routes/app_pages.dart';
 import 'package:bookanyvan_driver/core/constant/api_const.dart';
+import 'package:bookanyvan_driver/core/constant/local_storage_keys.dart';
+import 'package:bookanyvan_driver/core/data/local_source/local_storage.dart';
 import 'package:bookanyvan_driver/core/data/remote_source/base_api_client.dart';
 import 'package:dartz/dartz.dart';
 import 'package:get/get.dart';
@@ -19,6 +22,11 @@ class LoginController extends GetxController {
   @override
   void onClose() {
     super.onClose();
+  }
+
+  setToken() {
+    LocalStorage().writeValue(LocalStorageKeys.isLogged, true);
+    Get.offAllNamed(Routes.HOME);
   }
 
   test(data) async {
